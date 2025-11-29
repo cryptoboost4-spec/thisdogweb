@@ -61,10 +61,24 @@ export const EmailForm: React.FC = () => {
             </div>
             <button
                 type="submit"
-                className="w-full font-display text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-soft transition-all duration-200 transform hover:scale-105 hover:shadow-soft-hover active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="relative w-full font-display text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-soft transition-all duration-200 transform hover:scale-105 hover:shadow-glow-pink active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-primary via-secondary to-primary text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 overflow-hidden group"
                 disabled={status === 'loading'}
             >
-                {status === 'loading' ? 'Joining...' : 'Join the Waitlist'}
+                <span className="relative z-10 flex items-center gap-2">
+                    {status === 'loading' ? (
+                        <>
+                            <span className="animate-pulse">Joining</span>
+                            <span className="animate-bounce">💕</span>
+                        </>
+                    ) : (
+                        <>
+                            <span>Join the Waitlist</span>
+                            <span className="group-hover:scale-125 transition-transform duration-200">💕</span>
+                        </>
+                    )}
+                </span>
+                {/* Shine effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-700 ease-in-out" />
             </button>
             {status === 'error' && <p className="text-danger text-xs sm:text-sm font-semibold pt-1">{message}</p>}
         </form>
