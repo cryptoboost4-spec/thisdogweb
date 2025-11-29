@@ -1,4 +1,4 @@
-import type { FeatureCategory, PricingTier, Step, Testimonial, FaqItem, LogoOption } from './types';
+import type { FeatureCategory, PricingTier, Step, Testimonial, FaqItem, LogoOption, UseCase, TrustBadge } from './types';
 
 export const LOGO_OPTIONS: LogoOption[] = [
     { 
@@ -109,15 +109,123 @@ export const HOW_IT_WORKS_DATA: Step[] = [
 ];
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
-    { quote: "Me and my girls literally use this every time one of us goes on a date.", author: "Steph" },
-    { quote: "Besties does what we've been doing manually for years.", author: "Chloe" },
-    { quote: "No more guilt texts — if I forget to answer, the app looks after me.", author: "Lily" },
-    { quote: "Such a safe, comforting idea.", author: "Anna" }
+    { quote: "Me and my girls literally use this every time one of us goes on a date. It's like having them right there with me.", author: "Steph, 24" },
+    { quote: "Besties does what we've been doing manually for years — but way better. I don't have to remember to text anymore!", author: "Chloe, 27" },
+    { quote: "No more guilt texts when I forget to answer. The app has my back and my besties know I'm safe.", author: "Lily, 22" },
+    { quote: "Finally, an app that actually gets what we need. It's like having your best friend looking out for you 24/7.", author: "Anna, 25" },
+    { quote: "I use it every time I walk home from the bar. My roommate loves it too — she doesn't have to stay up worrying.", author: "Maya, 23" },
+    { quote: "This is genius. Why didn't this exist sooner? It's so simple but makes me feel so much safer.", author: "Jessica, 26" }
+];
+
+export const USE_CASES_DATA: UseCase[] = [
+    {
+        emoji: "💕",
+        title: "First Dates & Meeting New People",
+        description: "Going on a date with someone you met online? Your besties have your back.",
+        examples: [
+            "First date from a dating app",
+            "Meeting an online friend IRL",
+            "Coffee with someone new",
+            "That cute guy from the gym"
+        ]
+    },
+    {
+        emoji: "🌙",
+        title: "Night Out Safety",
+        description: "Out late? Walking home alone? Your besties know you're safe.",
+        examples: [
+            "Walking home from the bar",
+            "Girls' night out clubbing",
+            "Taking an Uber late at night",
+            "Walking to your car after work"
+        ]
+    },
+    {
+        emoji: "✈️",
+        title: "Travel & Adventures",
+        description: "Exploring somewhere new? Keep your people in the loop.",
+        examples: [
+            "Solo travel in a new city",
+            "Exploring unfamiliar neighborhoods",
+            "Hiking or outdoor adventures",
+            "Staying in a new place"
+        ]
+    },
+    {
+        emoji: "🏃‍♀️",
+        title: "Everyday Safety",
+        description: "Simple peace of mind for daily activities.",
+        examples: [
+            "Morning jog in the park",
+            "Walking the dog at night",
+            "Late night at the office",
+            "Long commute home"
+        ]
+    }
+];
+
+export const TRUST_BADGES_DATA: TrustBadge[] = [
+    {
+        icon: 'favorite',
+        title: 'Free Forever',
+        description: 'All core safety features are completely free. No hidden fees, no surprises.'
+    },
+    {
+        icon: 'lock',
+        title: 'Privacy First',
+        description: 'Your data is yours. We never sell it, track you, or share it without permission.'
+    },
+    {
+        icon: 'group',
+        title: 'No App Required',
+        description: 'Your besties get alerts via text, WhatsApp, or Messenger — no download needed.'
+    },
+    {
+        icon: 'verified',
+        title: 'Made by People Who Care',
+        description: 'Built by people who genuinely want to keep you safe. Safety over profit, always.'
+    }
 ];
 
 export const FAQ_DATA: FaqItem[] = [
-    { question: "Do my friends need the app?", answer: "No — they get messages in Messenger, WhatsApp, or SMS." },
-    { question: "Does it track me?", answer: "Only if you miss your check-in. Otherwise no location is stored." },
-    { question: "Can I use it for dates?", answer: "Absolutely — it's perfect for meeting new people." },
-    { question: "What happens if I forget to tap \"I'm Safe\"?", answer: "Your besties get a message automatically." }
+    {
+        question: "Is Besties really free?",
+        answer: "Yes! All core safety features are 100% free forever. We offer optional SMS alerts ($1/month) but you never have to pay. Keeping you safe is more important than profit."
+    },
+    {
+        question: "Do my friends need the app?",
+        answer: "Nope! They can receive alerts via SMS, WhatsApp, or Facebook Messenger even without downloading anything. They just need to accept your invite."
+    },
+    {
+        question: "Does it track my location all the time?",
+        answer: "Never! Your location is only shared during active check-ins — and only sent to your besties if you miss checking in. We don't track you when you're not using it."
+    },
+    {
+        question: "What happens if I forget to check in?",
+        answer: "Your besties will get automatic alerts with your last known location and any details you shared. You'll also get reminder notifications before the timer runs out (10min, 5min, 1min)."
+    },
+    {
+        question: "Can I use this for first dates?",
+        answer: "Absolutely! That's one of the most popular uses. Set a check-in timer, add your besties, and go on your date. If you don't check in, they'll know something's up."
+    },
+    {
+        question: "What if my phone dies?",
+        answer: "Your check-in is sent from the cloud, so even if your phone dies, loses signal, or gets lost, your besties will still be alerted when the timer runs out."
+    },
+    {
+        question: "Is this a replacement for 911?",
+        answer: "No! Besties is a safety tool for your friends, not emergency services. In a true emergency, always call 911 or local emergency services immediately."
+    },
+    {
+        question: "How many besties can I add?",
+        answer: "Add up to 5 trusted people to your safety circle. Choose the people who always have your back!"
+    },
+    {
+        question: "What if I need more time?",
+        answer: "No problem! Just tap \"Add Time\" in the app and extend your check-in by 15 minutes, 30 minutes, or 1 hour with one tap."
+    },
+    {
+        question: "Is my data secure?",
+        answer: "Yes! We use Google Firebase security, never sell your data, and you can delete everything anytime. Full transparency — check our privacy policy for details."
+    }
 ];

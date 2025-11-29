@@ -43,3 +43,16 @@ export interface LogoResult extends LogoOption {
     votes: number;
     percentage: number;
 }
+
+export interface UseCase {
+    emoji: string;
+    title: string;
+    description: string;
+    examples: string[];
+}
+
+export interface TrustBadge {
+    icon: string;
+    title: string;
+    description: string;
+}
