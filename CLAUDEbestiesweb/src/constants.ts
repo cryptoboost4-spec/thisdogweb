@@ -86,17 +86,17 @@ export const PRICING_DATA: PricingTier[] = [
         footer: "Completely free. Forever."
     },
     {
-        title: "BESTIES+ (Paid)",
-        subtitle: "You only pay if you want SMS alerts.",
+        title: "BESTIES+ ($1.99/month)",
+        subtitle: "Only pay if you want SMS alerts.",
         icon: '💘',
         highlight: true,
         features: [
-            "SMS alerts to any mobile number", 
-            "Faster delivery", 
-            "Higher reliability for non-app users", 
+            "SMS alerts to any mobile number",
+            "Faster delivery",
+            "Higher reliability for non-app users",
             "Helps fund backend costs"
         ],
-        footer: "No subscription needed unless you want SMS."
+        footer: "Just $1.99/month. Cancel anytime."
     }
 ];
 
@@ -176,11 +176,6 @@ export const TRUST_BADGES_DATA: TrustBadge[] = [
         description: 'Your data is yours. We never sell it, track you, or share it without permission.'
     },
     {
-        icon: 'group',
-        title: 'No App Required',
-        description: 'Your besties get alerts via text, WhatsApp, or Messenger — no download needed.'
-    },
-    {
         icon: 'verified',
         title: 'Made by People Who Care',
         description: 'Built by people who genuinely want to keep you safe. Safety over profit, always.'
@@ -190,7 +185,7 @@ export const TRUST_BADGES_DATA: TrustBadge[] = [
 export const FAQ_DATA: FaqItem[] = [
     {
         question: "Is Besties really free?",
-        answer: "Yes! All core safety features are 100% free forever. We offer optional SMS alerts ($1/month) but you never have to pay. Keeping you safe is more important than profit."
+        answer: "Yes! All core safety features are 100% free forever. We offer optional SMS alerts ($1.99/month) but you never have to pay. Keeping you safe is more important than profit."
     },
     {
         question: "Do my friends need the app?",

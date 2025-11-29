@@ -8,38 +8,43 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
     return (
-        <section className="relative text-center py-12 sm:py-20 md:py-32 px-4">
+        <section className="relative text-center py-16 sm:py-24 md:py-36 px-4 overflow-hidden">
+            {/* Gradient background glow */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-transparent pointer-events-none" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-primary/10 to-transparent blur-3xl pointer-events-none" />
+
             {/* Floating Hearts - More visible on desktop, fewer on mobile */}
-            <div className="hidden sm:block floating-heart" style={{ top: '10%', left: '10%', fontSize: '20px', animationDelay: '0s', animationDuration: '8s' }}>💕</div>
-            <div className="floating-heart" style={{ top: '20%', right: '15%', fontSize: '20px', animationDelay: '1s', animationDuration: '10s' }}>💖</div>
-            <div className="hidden md:block floating-heart" style={{ bottom: '30%', left: '20%', fontSize: '18px', animationDelay: '2s', animationDuration: '9s' }}>💗</div>
-            <div className="hidden sm:block floating-heart" style={{ top: '40%', right: '25%', fontSize: '22px', animationDelay: '1.5s', animationDuration: '11s' }}>💓</div>
-            <div className="floating-heart" style={{ bottom: '20%', right: '10%', fontSize: '18px', animationDelay: '0.5s', animationDuration: '10s' }}>💕</div>
-            <div className="hidden md:block floating-heart" style={{ top: '60%', left: '15%', fontSize: '16px', animationDelay: '2.5s', animationDuration: '12s' }}>💖</div>
+            <div className="hidden sm:block floating-heart" style={{ top: '10%', left: '10%', fontSize: '24px', animationDelay: '0s', animationDuration: '8s' }}>💕</div>
+            <div className="floating-heart" style={{ top: '20%', right: '15%', fontSize: '28px', animationDelay: '1s', animationDuration: '10s' }}>💖</div>
+            <div className="hidden md:block floating-heart" style={{ bottom: '30%', left: '20%', fontSize: '22px', animationDelay: '2s', animationDuration: '9s' }}>💗</div>
+            <div className="hidden sm:block floating-heart" style={{ top: '40%', right: '25%', fontSize: '26px', animationDelay: '1.5s', animationDuration: '11s' }}>💓</div>
+            <div className="floating-heart" style={{ bottom: '20%', right: '10%', fontSize: '24px', animationDelay: '0.5s', animationDuration: '10s' }}>💕</div>
+            <div className="hidden md:block floating-heart" style={{ top: '60%', left: '15%', fontSize: '20px', animationDelay: '2.5s', animationDuration: '12s' }}>💖</div>
 
-            {/* Mobile-first heading sizes */}
-            <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-text-primary tracking-wider animate-bounce-gentle">
-                BESTIES
-            </h1>
-            <h2 className="mt-3 sm:mt-4 font-display text-xl sm:text-2xl md:text-3xl text-primary px-4 leading-snug">
-                Your Safety Network. Always There When You Need It.
-            </h2>
-            <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-text-secondary font-semibold px-4 leading-relaxed">
-                First dates. Late nights. New places. Your besties know you're safe — and get automatic alerts if you're not. <span className="text-text-primary">No awkward texts, no forgotten check-ins.</span> Just real friends looking out for each other. 💕
-            </p>
+            <div className="relative z-10">
+                {/* Mobile-first heading sizes */}
+                <h1 className="font-display text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-transparent bg-clip-text bg-gradient-to-r from-text-primary via-primary to-text-primary tracking-wider animate-bounce-gentle">
+                    BESTIES
+                </h1>
+                <h2 className="mt-4 sm:mt-6 font-display text-2xl sm:text-3xl md:text-4xl text-primary px-4 leading-tight">
+                    Your Safety Network.<br className="sm:hidden" /> Always There When You Need It.
+                </h2>
+                <p className="mt-6 sm:mt-8 max-w-2xl mx-auto text-lg sm:text-xl text-text-secondary font-semibold px-4 leading-relaxed">
+                    <span className="text-text-primary font-bold">First dates. Late nights. New places.</span><br className="hidden sm:inline" /> Your besties know you're safe — and get automatic alerts if you're not.<br className="hidden sm:inline" /> <span className="text-primary font-bold">No awkward texts, no forgotten check-ins.</span> Just real friends looking out for each other. 💕
+                </p>
+            </div>
 
-            {/* Mobile-first button layout */}
-            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:gap-6">
-                 <div className="flex flex-col w-full max-w-md sm:max-w-none sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-4">
-                    <Button variant="disabled" iconLeft="lock" className="w-full sm:w-auto">
-                        Enter Site
-                    </Button>
-                    <Button variant="secondary" iconLeft="how_to_vote" onClick={onNavigate} className="w-full sm:w-auto">
-                        Vote for the Besties Logo
-                    </Button>
-                </div>
+            {/* Mobile-first CTA */}
+            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-5 sm:gap-6">
                 <div className="w-full max-w-md px-4">
                    <EmailForm />
+                </div>
+                <div className="flex items-center gap-2 text-text-secondary text-sm font-medium">
+                    <span>Coming Soon</span>
+                    <span>•</span>
+                    <button onClick={onNavigate} className="text-primary hover:text-secondary transition-colors font-semibold underline decoration-2 decoration-primary/30 hover:decoration-secondary/50">
+                        Vote on Our Logo
+                    </button>
                 </div>
             </div>
         </section>
