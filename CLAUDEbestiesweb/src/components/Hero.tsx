@@ -21,11 +21,11 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
             <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-text-primary tracking-wider animate-bounce-gentle">
                 BESTIES
             </h1>
-            <h2 className="mt-3 sm:mt-4 font-display text-xl sm:text-2xl md:text-3xl text-primary px-4">
-                Your best friends. Your automatic safety net.
+            <h2 className="mt-3 sm:mt-4 font-display text-xl sm:text-2xl md:text-3xl text-primary px-4 leading-snug">
+                Your Safety Network. Always There When You Need It.
             </h2>
-            <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-text-secondary font-semibold px-4">
-                Go out, meet people, live life — Besties checks in for you and lets your friends know if something's wrong.
+            <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-base sm:text-lg text-text-secondary font-semibold px-4 leading-relaxed">
+                First dates. Late nights. New places. Your besties know you're safe — and get automatic alerts if you're not. <span className="text-text-primary">No awkward texts, no forgotten check-ins.</span> Just real friends looking out for each other. 💕
             </p>
 
             {/* Mobile-first button layout */}

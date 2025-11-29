@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
+import TrustBadges from './components/TrustBadges';
 import SubHero from './components/SubHero';
+import UseCases from './components/UseCases';
 import Features from './components/Features';
 import Pricing from './components/Pricing';
 import HowItWorks from './components/HowItWorks';
+import Testimonials from './components/Testimonials';
 import Faq from './components/Faq';
 import Footer from './components/Footer';
 import Vote from './components/Vote';
@@ -27,10 +30,13 @@ const App: React.FC = () => {
                     {page === 'home' && (
                         <>
                             <Hero onNavigate={() => navigateTo('vote')} />
+                            <TrustBadges />
                             <SubHero />
+                            <UseCases />
                             <Features />
                             <Pricing />
                             <HowItWorks />
+                            <Testimonials />
                             <Faq />
                         </>
                     )}
