@@ -28,18 +28,17 @@ const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
                 First dates. Late nights. New places. Your besties know you're safe — and get automatic alerts if you're not. <span className="text-text-primary">No awkward texts, no forgotten check-ins.</span> Just real friends looking out for each other. 💕
             </p>
 
-            {/* Mobile-first button layout */}
-            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-4 sm:gap-6">
-                 <div className="flex flex-col w-full max-w-md sm:max-w-none sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 px-4">
-                    <Button variant="disabled" iconLeft="lock" className="w-full sm:w-auto">
-                        Enter Site
-                    </Button>
-                    <Button variant="secondary" iconLeft="how_to_vote" onClick={onNavigate} className="w-full sm:w-auto">
-                        Vote for the Besties Logo
-                    </Button>
-                </div>
+            {/* Mobile-first CTA */}
+            <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-5 sm:gap-6">
                 <div className="w-full max-w-md px-4">
                    <EmailForm />
+                </div>
+                <div className="flex items-center gap-2 text-text-secondary text-sm font-medium">
+                    <span>Coming Soon</span>
+                    <span>•</span>
+                    <button onClick={onNavigate} className="text-primary hover:text-secondary transition-colors font-semibold underline decoration-2 decoration-primary/30 hover:decoration-secondary/50">
+                        Vote on Our Logo
+                    </button>
                 </div>
             </div>
         </section>

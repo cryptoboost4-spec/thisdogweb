@@ -53,18 +53,18 @@ export const EmailForm: React.FC = () => {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Enter your email for early access"
+                    placeholder="your@email.com"
                     className="w-full pl-11 sm:pl-12 pr-4 py-3 sm:py-4 text-sm sm:text-base rounded-xl border-2 border-accent/30 bg-surface-light shadow-inner-soft focus:outline-none focus:border-primary transition-all text-text-primary placeholder:text-text-secondary font-medium"
                     disabled={status === 'loading'}
-                    aria-label="Email for early access"
+                    aria-label="Email address"
                 />
             </div>
             <button
                 type="submit"
-                className="w-full font-display text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-soft transition-all duration-200 transform hover:scale-105 hover:shadow-soft-hover active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-accent to-accent/80 text-text-primary disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full font-display text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 rounded-full shadow-soft transition-all duration-200 transform hover:scale-105 hover:shadow-soft-hover active:scale-95 flex items-center justify-center gap-2 bg-gradient-to-r from-primary to-secondary text-white disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
                 disabled={status === 'loading'}
             >
-                {status === 'loading' ? 'Joining...' : 'Get Early Access'}
+                {status === 'loading' ? 'Joining...' : 'Join the Waitlist'}
             </button>
             {status === 'error' && <p className="text-danger text-xs sm:text-sm font-semibold pt-1">{message}</p>}
         </form>
