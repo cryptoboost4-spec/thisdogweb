@@ -22,17 +22,17 @@ const UseCases: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                     {USE_CASES_DATA.map((useCase, index) => {
                         const colors = [
-                            { bg: 'from-blue-50 to-indigo-50', border: 'border-blue-200', iconBg: 'from-blue-100 to-indigo-100' },
-                            { bg: 'from-rose-50 to-pink-50', border: 'border-rose-200', iconBg: 'from-rose-100 to-pink-100' },
-                            { bg: 'from-purple-50 to-fuchsia-50', border: 'border-purple-200', iconBg: 'from-purple-100 to-fuchsia-100' },
-                            { bg: 'from-amber-50 to-orange-50', border: 'border-amber-200', iconBg: 'from-amber-100 to-orange-100' }
+                            { bg: 'from-blue-50/70 to-indigo-50/70', border: 'border-blue-200', iconBg: 'from-blue-100 to-indigo-100' },
+                            { bg: 'from-rose-50/70 to-pink-50/70', border: 'border-rose-200', iconBg: 'from-rose-100 to-pink-100' },
+                            { bg: 'from-purple-50/70 to-fuchsia-50/70', border: 'border-purple-200', iconBg: 'from-purple-100 to-fuchsia-100' },
+                            { bg: 'from-amber-50/70 to-orange-50/70', border: 'border-amber-200', iconBg: 'from-amber-100 to-orange-100' }
                         ];
                         const color = colors[index % colors.length];
 
                         return (
                         <div
                             key={index}
-                            className={`relative bg-gradient-to-br ${color.bg} bg-opacity-70 backdrop-blur-sm rounded-2xl p-4 shadow-soft-dreamy hover:shadow-soft-dreamy-hover transition-all duration-300 hover:-translate-y-1 border ${color.border} group`}
+                            className={`relative bg-gradient-to-br ${color.bg} backdrop-blur-sm rounded-2xl p-4 shadow-soft-dreamy hover:shadow-soft-dreamy-hover transition-all duration-300 hover:-translate-y-1 border ${color.border} group`}
                         >
                             <div className="relative z-10">
                                 {/* Emoji header */}

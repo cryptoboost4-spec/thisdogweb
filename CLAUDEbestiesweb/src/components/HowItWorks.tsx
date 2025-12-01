@@ -4,15 +4,15 @@ import type { Step } from '../types';
 
 const StepCard: React.FC<{ step: Step; index: number }> = ({ step, index }) => {
     const colors = [
-        { bg: 'from-purple-50 to-fuchsia-50', border: 'border-purple-200', numBg: 'from-purple-400 to-purple-600' },
-        { bg: 'from-pink-50 to-rose-50', border: 'border-pink-200', numBg: 'from-pink-400 to-pink-600' },
-        { bg: 'from-fuchsia-50 to-pink-50', border: 'border-fuchsia-200', numBg: 'from-fuchsia-400 to-fuchsia-600' },
-        { bg: 'from-rose-50 to-pink-50', border: 'border-rose-200', numBg: 'from-rose-400 to-rose-600' }
+        { bg: 'from-purple-50/70 to-fuchsia-50/70', border: 'border-purple-200', numBg: 'from-purple-400 to-purple-600' },
+        { bg: 'from-pink-50/70 to-rose-50/70', border: 'border-pink-200', numBg: 'from-pink-400 to-pink-600' },
+        { bg: 'from-fuchsia-50/70 to-pink-50/70', border: 'border-fuchsia-200', numBg: 'from-fuchsia-400 to-fuchsia-600' },
+        { bg: 'from-rose-50/70 to-pink-50/70', border: 'border-rose-200', numBg: 'from-rose-400 to-rose-600' }
     ];
     const color = colors[index % colors.length];
 
     return (
-    <div className={`flex items-start gap-3 text-left bg-gradient-to-br ${color.bg} bg-opacity-70 backdrop-blur-sm rounded-2xl p-4 shadow-soft-dreamy hover:shadow-soft-dreamy-hover transition-all duration-300 hover:-translate-y-1 border ${color.border} group`}>
+    <div className={`flex items-start gap-3 text-left bg-gradient-to-br ${color.bg} backdrop-blur-sm rounded-2xl p-4 shadow-soft-dreamy hover:shadow-soft-dreamy-hover transition-all duration-300 hover:-translate-y-1 border ${color.border} group`}>
         <div className={`flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-br ${color.numBg} flex items-center justify-center shadow-soft-dreamy group-hover:scale-105 transition-all duration-300`}>
             <span className="font-display text-xl text-white">{index + 1}</span>
         </div>

@@ -22,16 +22,16 @@ const TrustBadges: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     {TRUST_BADGES_DATA.map((badge, index) => {
                         const colors = [
-                            { bg: 'from-pink-100 to-purple-100', border: 'border-pink-200', iconBg: 'from-pink-400 to-pink-600' },
-                            { bg: 'from-purple-100 to-fuchsia-100', border: 'border-purple-200', iconBg: 'from-purple-400 to-purple-600' },
-                            { bg: 'from-fuchsia-100 to-pink-100', border: 'border-fuchsia-200', iconBg: 'from-fuchsia-400 to-fuchsia-600' }
+                            { bg: 'from-pink-100/70 to-purple-100/70', border: 'border-pink-200', iconBg: 'from-pink-400 to-pink-600' },
+                            { bg: 'from-purple-100/70 to-fuchsia-100/70', border: 'border-purple-200', iconBg: 'from-purple-400 to-purple-600' },
+                            { bg: 'from-fuchsia-100/70 to-pink-100/70', border: 'border-fuchsia-200', iconBg: 'from-fuchsia-400 to-fuchsia-600' }
                         ];
                         const color = colors[index % colors.length];
 
                         return (
                         <div
                             key={index}
-                            className={`bg-gradient-to-br ${color.bg} bg-opacity-70 backdrop-blur-sm rounded-2xl p-4 text-center group shadow-soft-dreamy hover:shadow-soft-dreamy-hover transition-all duration-300 hover:-translate-y-1 border ${color.border} relative overflow-hidden`}
+                            className={`bg-gradient-to-br ${color.bg} backdrop-blur-sm rounded-2xl p-4 text-center group shadow-soft-dreamy hover:shadow-soft-dreamy-hover transition-all duration-300 hover:-translate-y-1 border ${color.border} relative overflow-hidden`}
                         >
                             <div className="relative z-10">
                                 {/* Icon */}
