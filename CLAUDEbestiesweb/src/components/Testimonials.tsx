@@ -18,30 +18,26 @@ const Testimonials: React.FC = () => {
                 <p className="text-center text-base sm:text-lg text-text-secondary font-bold mb-8 sm:mb-12 px-4 animate-fade-in-delay">
                     Real stories from real people staying safe together 💕
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                     {TESTIMONIALS_DATA.map((testimonial, index) => (
                         <div
                             key={index}
-                            className="bg-gradient-to-br from-white/95 to-white/80 rounded-3xl p-5 sm:p-6 shadow-soft hover:shadow-mega-glow transition-all duration-500 hover:-translate-y-4 hover:scale-105 border-2 border-accent/30 hover:border-primary/40 relative overflow-hidden group gradient-shimmer"
+                            className="bg-white rounded-xl p-4 sm:p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border border-gray-200 relative group"
                         >
-                            {/* Enhanced gradient overlay on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                            <div className="absolute bottom-0 right-0 w-24 h-24 bg-gradient-radial from-secondary/15 to-transparent blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
 
-                            {/* Quote decoration with gradient */}
-                            <div className="absolute top-2 left-3 text-5xl sm:text-6xl text-transparent bg-clip-text bg-gradient-to-br from-primary/20 to-secondary/20 font-display leading-none group-hover:scale-110 transition-transform duration-300">
+                            {/* Quote decoration */}
+                            <div className="absolute top-1.5 left-2 text-4xl text-primary/20 font-display leading-none">
                                 "
                             </div>
                             <div className="relative z-10">
-                                <p className="text-sm sm:text-base text-text-primary font-medium leading-relaxed mb-4 italic pt-4">
+                                <p className="text-xs sm:text-sm text-gray-800 font-medium leading-snug mb-3 italic pt-3">
                                     "{testimonial.quote}"
                                 </p>
-                                <div className="flex items-center gap-2 sm:gap-3">
-                                    <div className="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-primary via-secondary to-primary bg-size-200 animate-gradient-shift flex items-center justify-center text-white font-display text-sm sm:text-base shadow-soft group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-glow-pink transition-all duration-500">
+                                <div className="flex items-center gap-2">
+                                    <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-display text-xs sm:text-sm shadow-sm">
                                         {testimonial.author.charAt(0)}
-                                        <div className="absolute inset-0 rounded-full border-2 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500" />
                                     </div>
-                                    <p className="font-display text-sm sm:text-base text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
+                                    <p className="font-display text-xs sm:text-sm text-primary">
                                         {testimonial.author}
                                     </p>
                                 </div>

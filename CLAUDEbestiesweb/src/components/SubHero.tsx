@@ -20,18 +20,14 @@ const SubHero: React.FC = () => {
                 <p className="text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold px-4 mb-8 sm:mb-10 animate-fade-in-delay">
                     Now they don't have to rely on you remembering. ✨
                 </p>
-                <div className="relative mt-8 sm:mt-10 p-8 sm:p-10 md:p-12 bg-gradient-to-br from-white/95 to-white/80 backdrop-blur-sm rounded-3xl shadow-soft-hover border-2 border-primary/30 space-y-5 sm:space-y-6 overflow-hidden group hover:shadow-mega-glow transition-all duration-500 hover:-translate-y-2 gradient-shimmer">
-                    {/* Enhanced animated gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/10 to-primary/10 opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-secondary/20 to-transparent blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
-                    <div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-radial from-primary/20 to-transparent blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
+                <div className="relative mt-8 sm:mt-10 p-6 sm:p-8 md:p-10 bg-gradient-to-br from-orange-50 to-red-50 backdrop-blur-sm rounded-xl border-2 border-orange-200 space-y-4 sm:space-y-5 overflow-hidden group hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
 
                     <div className="relative z-10">
-                        <p className="text-lg sm:text-xl text-text-primary font-bold leading-relaxed">
+                        <p className="text-base sm:text-lg text-gray-800 font-semibold leading-relaxed">
                             You set a check-in. If you forget to tap <span className="text-primary">"I'm Safe"</span>, Besties automatically alerts your chosen friends through <span className="text-secondary">Messenger</span> or <span className="text-secondary">WhatsApp</span>.
                         </p>
-                        <div className="mt-6 sm:mt-8 pt-6 border-t-2 border-primary/30 group-hover:border-primary/50 transition-colors duration-300">
-                            <p className="font-display text-2xl sm:text-3xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 animate-gradient-shift leading-tight drop-shadow-[0_0_15px_rgba(255,105,180,0.3)]">
+                        <div className="mt-5 sm:mt-6 pt-5 border-t-2 border-orange-200">
+                            <p className="font-display text-xl sm:text-2xl md:text-3xl text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary leading-tight">
                                 No fear. No stress.<br />Just besties looking after besties. 💕✨
                             </p>
                         </div>

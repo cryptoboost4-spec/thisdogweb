@@ -18,39 +18,43 @@ const UseCases: React.FC = () => {
                 <p className="text-center text-lg sm:text-xl text-text-secondary font-bold mb-12 sm:mb-16 px-4 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay">
                     Life happens. Whether it's a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold">first date</span>, a <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold">night out</span>, or just <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary font-bold">walking home</span> — your besties have got your back. 💕
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-                    {USE_CASES_DATA.map((useCase, index) => (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                    {USE_CASES_DATA.map((useCase, index) => {
+                        const colors = [
+                            { bg: 'from-blue-50 to-indigo-50', border: 'border-blue-200', iconBg: 'from-blue-100 to-indigo-100' },
+                            { bg: 'from-rose-50 to-pink-50', border: 'border-rose-200', iconBg: 'from-rose-100 to-pink-100' },
+                            { bg: 'from-purple-50 to-fuchsia-50', border: 'border-purple-200', iconBg: 'from-purple-100 to-fuchsia-100' },
+                            { bg: 'from-amber-50 to-orange-50', border: 'border-amber-200', iconBg: 'from-amber-100 to-orange-100' }
+                        ];
+                        const color = colors[index % colors.length];
+
+                        return (
                         <div
                             key={index}
-                            className="relative bg-gradient-to-br from-white/95 to-white/80 rounded-3xl p-7 sm:p-9 shadow-soft hover:shadow-mega-glow transition-all duration-500 hover:-translate-y-4 hover:scale-105 border-2 border-accent/30 hover:border-primary/40 group overflow-hidden gradient-shimmer"
+                            className={`relative bg-gradient-to-br ${color.bg} rounded-xl p-6 sm:p-7 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border ${color.border} group`}
                         >
-                            {/* Enhanced gradient glow on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-radial from-primary/15 to-transparent blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
-
                             <div className="relative z-10">
                                 {/* Emoji header */}
-                                <div className="flex items-center gap-4 sm:gap-5 mb-5 sm:mb-6">
-                                    <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center group-hover:scale-125 group-hover:shadow-glow-pink transition-all duration-500">
-                                        <span className="text-4xl sm:text-5xl group-hover:animate-bounce-gentle">{useCase.emoji}</span>
-                                        <div className="absolute inset-0 rounded-full border-2 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500" />
+                                <div className="flex items-center gap-3 sm:gap-4 mb-4">
+                                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${color.iconBg} flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-sm`}>
+                                        <span className="text-3xl sm:text-4xl">{useCase.emoji}</span>
                                     </div>
-                                    <h4 className="font-display text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-primary group-hover:from-primary group-hover:to-secondary flex-1 transition-all duration-300">
+                                    <h4 className="font-display text-lg sm:text-xl text-gray-900 flex-1">
                                         {useCase.title}
                                     </h4>
                                 </div>
 
                                 {/* Description */}
-                                <p className="text-base sm:text-lg text-text-secondary font-semibold mb-5 sm:mb-6 leading-relaxed">
+                                <p className="text-sm sm:text-base text-gray-700 font-medium mb-4 leading-relaxed">
                                     {useCase.description}
                                 </p>
 
                                 {/* Examples */}
-                                <ul className="space-y-3">
+                                <ul className="space-y-2">
                                     {useCase.examples.map((example, exampleIndex) => (
-                                        <li key={exampleIndex} className="flex items-start gap-3">
-                                            <div className="w-2 h-2 rounded-full bg-gradient-to-br from-primary to-secondary mt-2 flex-shrink-0 group-hover:scale-125 transition-transform duration-200"></div>
-                                            <span className="text-sm sm:text-base text-text-primary font-medium leading-relaxed">
+                                        <li key={exampleIndex} className="flex items-start gap-2">
+                                            <div className="w-1.5 h-1.5 rounded-full bg-gradient-to-br from-primary to-secondary mt-1.5 flex-shrink-0"></div>
+                                            <span className="text-xs sm:text-sm text-gray-700 font-medium leading-snug">
                                                 {example}
                                             </span>
                                         </li>
@@ -58,7 +62,8 @@ const UseCases: React.FC = () => {
                                 </ul>
                             </div>
                         </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>
