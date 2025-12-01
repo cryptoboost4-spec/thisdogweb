@@ -4,21 +4,15 @@ import { FEATURES_DATA } from '../constants';
 import type { Feature } from '../types';
 
 const FeatureCard: React.FC<{ feature: Feature }> = ({ feature }) => (
-    <div className="relative bg-gradient-to-br from-white/95 to-white/80 rounded-3xl p-5 sm:p-6 shadow-soft hover:shadow-mega-glow backdrop-blur-sm transition-all duration-500 hover:-translate-y-4 hover:scale-105 border-2 border-accent/30 hover:border-primary/50 h-full group overflow-hidden gradient-shimmer">
-        {/* Enhanced gradient glow on hover */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-radial from-secondary/15 to-transparent blur-xl group-hover:scale-150 transition-transform duration-500 pointer-events-none" />
-
+    <div className="relative bg-white rounded-xl p-4 sm:p-5 hover:shadow-lg backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 border border-gray-200 h-full group">
         <div className="relative z-10">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
-                <div className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-br from-primary/30 to-secondary/30 text-primary shadow-soft group-hover:scale-125 group-hover:rotate-12 group-hover:shadow-glow-pink transition-all duration-500">
-                    <Icon name={feature.icon} className="text-2xl sm:text-3xl group-hover:animate-bounce-gentle" />
-                    {/* Pulsing ring on hover */}
-                    <div className="absolute inset-0 rounded-full border-2 border-primary/40 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500" />
+            <div className="flex items-start gap-3 mb-3">
+                <div className="flex items-center justify-center w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 text-primary shadow-sm group-hover:scale-105 transition-all duration-300 flex-shrink-0">
+                    <Icon name={feature.icon} className="text-xl sm:text-2xl" />
                 </div>
-                <h4 className="font-display text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-primary group-hover:from-primary group-hover:to-secondary transition-all duration-300">{feature.title}</h4>
+                <h4 className="font-display text-base sm:text-lg text-gray-900 pt-1">{feature.title}</h4>
             </div>
-            <p className="mt-3 sm:mt-4 text-sm sm:text-base text-text-secondary font-semibold leading-relaxed">{feature.description}</p>
+            <p className="text-xs sm:text-sm text-gray-700 leading-snug">{feature.description}</p>
         </div>
     </div>
 );
@@ -42,7 +36,7 @@ const Features: React.FC = () => {
                            <span className="text-3xl sm:text-4xl animate-bounce-gentle">{category.emoji}</span>
                            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 animate-gradient-shift drop-shadow-[0_0_20px_rgba(255,105,180,0.3)]">{category.title}</span>
                         </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                             {category.items.map(feature => (
                                 <FeatureCard key={feature.title} feature={feature} />
                             ))}

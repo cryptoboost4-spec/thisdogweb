@@ -16,17 +16,14 @@ const Faq: React.FC = () => {
                 <h3 className="font-display text-3xl sm:text-4xl md:text-5xl text-center mb-8 sm:mb-12 animate-fade-in">
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 animate-gradient-shift drop-shadow-[0_0_25px_rgba(255,105,180,0.4)]">FAQ</span> ✨
                 </h3>
-                <div className="max-w-3xl mx-auto space-y-4 sm:space-y-6">
+                <div className="max-w-3xl mx-auto space-y-3 sm:space-y-4">
                     {FAQ_DATA.map(item => (
                         <div
                             key={item.question}
-                            className="bg-gradient-to-br from-white/95 to-white/80 p-5 sm:p-6 rounded-3xl shadow-soft hover:shadow-mega-glow backdrop-blur-sm border-2 border-accent/30 hover:border-primary/40 transition-all duration-500 hover:-translate-y-2 hover:scale-105 group overflow-hidden gradient-shimmer"
+                            className="bg-white p-4 sm:p-5 rounded-xl hover:shadow-lg backdrop-blur-sm border border-gray-200 transition-all duration-300 hover:-translate-y-1 group"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                            <div className="relative z-10">
-                                <h4 className="font-display text-lg sm:text-xl text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-primary group-hover:from-primary group-hover:to-secondary transition-all duration-300">{item.question}</h4>
-                                <p className="mt-2 sm:mt-3 text-sm sm:text-base text-text-secondary font-semibold leading-relaxed">{item.answer}</p>
-                            </div>
+                            <h4 className="font-display text-base sm:text-lg text-gray-900">{item.question}</h4>
+                            <p className="mt-2 text-xs sm:text-sm text-gray-700 leading-snug">{item.answer}</p>
                         </div>
                     ))}
                 </div>

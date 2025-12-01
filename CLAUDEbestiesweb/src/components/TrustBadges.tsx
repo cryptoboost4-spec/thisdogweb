@@ -19,39 +19,40 @@ const TrustBadges: React.FC = () => {
                     </p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                    {TRUST_BADGES_DATA.map((badge, index) => (
+                    {TRUST_BADGES_DATA.map((badge, index) => {
+                        const colors = [
+                            { bg: 'from-pink-100 to-purple-100', border: 'border-pink-200', iconBg: 'from-pink-400 to-pink-600' },
+                            { bg: 'from-purple-100 to-fuchsia-100', border: 'border-purple-200', iconBg: 'from-purple-400 to-purple-600' },
+                            { bg: 'from-fuchsia-100 to-pink-100', border: 'border-fuchsia-200', iconBg: 'from-fuchsia-400 to-fuchsia-600' }
+                        ];
+                        const color = colors[index % colors.length];
+
+                        return (
                         <div
                             key={index}
-                            className="bg-gradient-to-br from-white/90 to-white/60 backdrop-blur-sm rounded-3xl p-7 sm:p-9 text-center group hover:shadow-mega-glow transition-all duration-500 hover:-translate-y-4 hover:scale-105 border-2 border-gradient-to-br border-primary/20 hover:border-primary/40 relative overflow-hidden gradient-shimmer"
+                            className={`bg-gradient-to-br ${color.bg} rounded-xl p-6 sm:p-7 text-center group hover:shadow-lg transition-all duration-300 hover:-translate-y-2 border ${color.border} relative overflow-hidden`}
                         >
-                            {/* Enhanced gradient glow on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
                             <div className="relative z-10">
-                                {/* Icon - Enhanced with multiple effects */}
-                                <div className="flex items-center justify-center mb-5 sm:mb-6">
-                                    <div className="relative">
-                                        <div className="w-18 h-18 sm:w-22 sm:h-22 rounded-full bg-gradient-to-br from-primary via-secondary to-primary bg-size-200 animate-gradient-shift flex items-center justify-center shadow-soft group-hover:scale-125 group-hover:shadow-mega-glow group-hover:rotate-12 transition-all duration-500">
-                                            <Icon name={badge.icon} className="text-white text-4xl sm:text-5xl group-hover:animate-bounce-gentle" />
-                                        </div>
-                                        {/* Pulsing ring effect on hover */}
-                                        <div className="absolute inset-0 rounded-full border-4 border-primary/30 opacity-0 group-hover:opacity-100 group-hover:scale-150 transition-all duration-500" />
+                                {/* Icon */}
+                                <div className="flex items-center justify-center mb-4">
+                                    <div className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br ${color.iconBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-all duration-300`}>
+                                        <Icon name={badge.icon} className="text-white text-3xl sm:text-4xl" />
                                     </div>
                                 </div>
 
                                 {/* Title */}
-                                <h4 className="font-display text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-primary group-hover:from-primary group-hover:to-secondary transition-all duration-300">
+                                <h4 className="font-display text-lg sm:text-xl text-gray-900 mb-2">
                                     {badge.title}
                                 </h4>
 
                                 {/* Description */}
-                                <p className="text-sm sm:text-base text-text-secondary font-medium leading-relaxed">
+                                <p className="text-xs sm:text-sm text-gray-700 leading-snug">
                                     {badge.description}
                                 </p>
                             </div>
                         </div>
-                    ))}
+                        );
+                    })}
                 </div>
             </div>
         </section>

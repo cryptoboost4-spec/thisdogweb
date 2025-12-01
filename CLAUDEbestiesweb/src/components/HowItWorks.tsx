@@ -2,21 +2,27 @@ import React from 'react';
 import { HOW_IT_WORKS_DATA } from '../constants';
 import type { Step } from '../types';
 
-const StepCard: React.FC<{ step: Step; index: number }> = ({ step, index }) => (
-    <div className="relative flex flex-col sm:flex-row items-center gap-4 sm:gap-6 text-center sm:text-left bg-gradient-to-br from-white/95 to-white/80 rounded-3xl p-5 sm:p-6 shadow-soft hover:shadow-mega-glow transition-all duration-500 hover:-translate-y-3 hover:scale-105 border-2 border-accent/30 hover:border-primary/40 group overflow-hidden gradient-shimmer">
-        {/* Enhanced gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+const StepCard: React.FC<{ step: Step; index: number }> = ({ step, index }) => {
+    const colors = [
+        { bg: 'from-purple-50 to-fuchsia-50', border: 'border-purple-200', numBg: 'from-purple-400 to-purple-600' },
+        { bg: 'from-pink-50 to-rose-50', border: 'border-pink-200', numBg: 'from-pink-400 to-pink-600' },
+        { bg: 'from-fuchsia-50 to-pink-50', border: 'border-fuchsia-200', numBg: 'from-fuchsia-400 to-fuchsia-600' },
+        { bg: 'from-rose-50 to-pink-50', border: 'border-rose-200', numBg: 'from-rose-400 to-rose-600' }
+    ];
+    const color = colors[index % colors.length];
 
-        <div className="relative flex-shrink-0 font-display text-5xl sm:text-6xl md:text-7xl text-transparent bg-clip-text bg-gradient-to-br from-primary via-secondary to-primary bg-size-200 animate-gradient-shift drop-shadow-[0_0_20px_rgba(255,105,180,0.4)] group-hover:scale-110 transition-transform duration-500">
-            {index + 1}
+    return (
+    <div className={`flex flex-col sm:flex-row items-center gap-3 sm:gap-4 text-center sm:text-left bg-gradient-to-br ${color.bg} rounded-xl p-4 sm:p-5 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border ${color.border} group`}>
+        <div className={`flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${color.numBg} flex items-center justify-center shadow-md group-hover:scale-105 transition-all duration-300`}>
+            <span className="font-display text-2xl sm:text-3xl text-white">{index + 1}</span>
         </div>
-        <div className="flex-1 relative z-10">
-            <h4 className="font-display text-xl sm:text-2xl text-transparent bg-clip-text bg-gradient-to-r from-text-primary to-text-primary group-hover:from-primary group-hover:to-secondary transition-all duration-300">{step.title}</h4>
-            <p className="mt-2 text-sm sm:text-base text-text-secondary font-semibold">{step.description}</p>
+        <div className="flex-1">
+            <h4 className="font-display text-base sm:text-lg text-gray-900">{step.title}</h4>
+            <p className="mt-1 text-xs sm:text-sm text-gray-700 leading-snug">{step.description}</p>
         </div>
     </div>
-);
+    );
+};
 
 const HowItWorks: React.FC = () => {
     return (
@@ -34,7 +40,7 @@ const HowItWorks: React.FC = () => {
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 animate-gradient-shift drop-shadow-[0_0_25px_rgba(255,105,180,0.4)]">How Besties Works</span> ✨
                 </h3>
                 <div className="relative max-w-3xl mx-auto">
-                    <div className="space-y-6 sm:space-y-8">
+                    <div className="space-y-3 sm:space-y-4">
                         {HOW_IT_WORKS_DATA.map((step, index) => (
                             <StepCard key={step.title} step={step} index={index} />
                         ))}
