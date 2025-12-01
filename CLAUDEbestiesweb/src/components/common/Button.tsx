@@ -10,11 +10,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export const Button: React.FC<ButtonProps> = ({ variant = 'primary', iconLeft, iconRight, children, className, ...props }) => {
     // Mobile-first: smaller padding on mobile, larger on desktop
-    const baseClasses = 'font-display text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full shadow-soft transition-all duration-200 transform hover:scale-105 hover:shadow-soft-hover active:scale-95 flex items-center justify-center gap-2';
+    const baseClasses = 'relative font-display text-base sm:text-lg px-6 py-3 sm:px-8 sm:py-4 rounded-full transition-all duration-300 transform hover:scale-110 active:scale-95 flex items-center justify-center gap-2 overflow-hidden group';
 
     const variantClasses = {
-        primary: 'bg-gradient-to-r from-primary to-secondary text-white shadow-glow-pink',
-        secondary: 'bg-surface-light text-primary border-2 border-primary hover:bg-accent',
+        primary: 'bg-gradient-to-r from-primary via-secondary to-primary bg-size-200 animate-gradient-shift text-white shadow-mega-glow hover:shadow-mega-glow',
+        secondary: 'bg-gradient-to-br from-white/90 to-white/70 text-primary border-2 border-primary/40 hover:border-primary shadow-soft hover:shadow-soft-hover hover:bg-gradient-to-br hover:from-accent/30 hover:to-accent/20',
         disabled: 'bg-text-secondary/30 text-text-primary/50 cursor-not-allowed shadow-none hover:scale-100',
     };
 
@@ -24,9 +24,16 @@ export const Button: React.FC<ButtonProps> = ({ variant = 'primary', iconLeft, i
             disabled={variant === 'disabled'}
             {...props}
         >
-            {iconLeft && <Icon name={iconLeft} className="text-xl sm:text-2xl" />}
-            <span>{children}</span>
-            {iconRight && <Icon name={iconRight} className="text-xl sm:text-2xl" />}
+            {/* Shimmer effect on primary button */}
+            {variant === 'primary' && (
+                <>
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 -translate-x-full group-hover:translate-x-full transition-all duration-700" />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary to-secondary opacity-60 blur-xl -z-10 group-hover:animate-glow-pulse" />
+                </>
+            )}
+            {iconLeft && <Icon name={iconLeft} className="text-xl sm:text-2xl group-hover:rotate-12 transition-transform duration-300" />}
+            <span className="relative z-10">{children}</span>
+            {iconRight && <Icon name={iconRight} className="text-xl sm:text-2xl group-hover:rotate-12 transition-transform duration-300" />}
         </button>
     );
 };
